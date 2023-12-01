@@ -217,7 +217,7 @@ class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
     );
 
     const doomFace = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, "assets", `doom${i}.png`)
+      vscode.Uri.joinPath(this._extensionUri, "assets", `doom${i}.gif`)
     );
 
     return getHtml(doomFace, stylesheetUri);
@@ -242,7 +242,7 @@ function getHtml(doomFace: vscode.Uri, stylesheetUri: vscode.Uri) {
         <section>
           <img src="${doomFace}">
           <h2 class=${errorNum ? "alarm" : ""}>
-            ${errorNum} ${errorNum === 1 ? "error" : "errors"}
+            ${errorNum} ${errorNum === 1 ? "error" : errorNum <= 4 ? "errors" : errorNum <= 10 ? "e̶̥̻͠r̷͎̪͗̓ṛ̶̩̿̐õ̸̯̂r̷͖̍̈́ṡ̶̻͚͝" : "ه̵̜͒̀͘͝ن̴̘́͘ا̶̳̏ك̶̬̲̟͑ ̸͉͐ا̵̩͑͒̕ل̸̡͕̓͗͠ع̵̞̈́̒̇̕د̴̼̹̊ي̷̨̗͈̥͛̂د̸͙̤̺̰̎́̾̅ ̷̩̝̪͎̌م̵̞̳̳͉̋ن̶̮͌͝͠ ̷̻̗̇ا̸͕͍̲̫͑̀̓̽ل̶̘̯͍̽أ̶͓͎͂̿̆ͅخ̷̤͙̠̱̂ط̶̩̍̈̏ا̵̪͌̎ء̸̼̭̰͐ ̴̛̹͖̲ه̷͇̂ن̴̡̙͕̦̅̂͋͠ا̶̹̑.̵͎͌͝ͅ ̶͈̣̋̆ͅا̶͙̼̎̇͐ن̷̩̖̟̈́̇ت̴̯͉̓̑̎ح̷̪̄̀͗ر̴̨̣̻͈̋͌"}
           </h2>
         </section>
       </body>
